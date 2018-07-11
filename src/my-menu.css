@@ -1,0 +1,52 @@
+.my-menu-node-container {
+	width: 100%;
+	background-color:#00acc1;	
+	color: #ffffff;
+	height: 40px;
+	padding-left: 20px;
+	padding-top: 7px;
+	border-bottom: solid 1px rgb(73, 73, 73);
+
+}
+
+.my-menu-node-container:hover {	
+	background-image: linear-gradient(to right, #517fa4 0%, #243949 51%, #517fa4 100%);	
+	box-shadow: 0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2);
+	background-position: right center;
+	font-weight: bold;
+}
+
+.my-menu-leaf-container {
+	width: 100%;	
+	height: 30px;
+	padding-left: 15px;
+	padding-top: 2px;
+	border-bottom: solid 1px rgb(73, 73 ,73);
+    color: #ffffff;
+    box-shadow: 0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2);
+    background-color: #5cb860;
+	
+}
+
+.my-menu-leaf-container:hover {
+	background-image: linear-gradient(to right, #6A9113 0%, #141517 51%, #6A9113 100%);
+	background-position: right center;
+	font-weight: bold;
+}
+ul>ul{
+	margin-top: 0px;
+}
+div>ul{
+	margin-top: 0px;
+}
+ul>li{
+	list-style-type: none;  
+	margin-top: 0px;
+  }
+
+  ul>div{
+	margin-top: 0px;
+	background: linear-gradient(60deg, #ab47bc, #8e24aa);
+    box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
+  }
+
