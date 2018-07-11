@@ -2,8 +2,7 @@
 
 ![ChaldalDemo](https://github.com/gsayem/chaldhal-menu-search/blob/master/ChaldalDemo.gif)
 
-Clone the Code
-Run the follwing commands,
+Clone the code and run the follwing commands,
 
 npm install
 
