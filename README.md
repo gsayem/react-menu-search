@@ -6,6 +6,7 @@ Clone the Code
 Run the follwing commands,
 
 npm install
+
 npm start
 
 That's all, now you can see the menu at http://localhost:3006/
