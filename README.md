@@ -1,4 +1,4 @@
-# chaldhal-menu-search using ReactJS
+# chaldal-menu-search using ReactJS
 
 ![ChaldalDemo](https://github.com/gsayem/chaldhal-menu-search/blob/master/ChaldalDemo.gif)
 

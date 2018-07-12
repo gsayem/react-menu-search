@@ -53,7 +53,7 @@ class App extends Component {
         <div className="columns">
           <div className="col-md-9 centered">
           <form className="container">
-          <h3>Chaldhal menu search</h3>            
+          <h3>Chaldal menu search</h3>            
             <MyMenu tree={allData} />
           </form>
             
