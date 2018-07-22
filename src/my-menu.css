@@ -6,7 +6,10 @@
 	padding-left: 20px;
 	padding-top: 7px;
 	border-bottom: solid 1px rgb(73, 73, 73);
-
+	cursor: pointer;
+}
+.my-menu-node-container label{
+	cursor: pointer;
 }
 
 .my-menu-node-container:hover {	
@@ -14,6 +17,7 @@
 	box-shadow: 0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2);
 	background-position: right center;
 	font-weight: bold;
+	
 }
 
 .my-menu-leaf-container {
@@ -24,14 +28,18 @@
 	border-bottom: solid 1px rgb(73, 73 ,73);
     color: #ffffff;
     box-shadow: 0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2);
-    background-color: #5cb860;
-	
+	background-color: #5cb860;	
+	cursor: pointer;
+}
+.my-menu-leaf-container span{
+	cursor: pointer;
 }
 
 .my-menu-leaf-container:hover {
 	background-image: linear-gradient(to right, #6A9113 0%, #141517 51%, #6A9113 100%);
 	background-position: right center;
 	font-weight: bold;
+	
 }
 ul>ul{
 	margin-top: 0px;

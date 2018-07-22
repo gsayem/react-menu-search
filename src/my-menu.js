@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import SearchInput from "./search-input";
+import NestedObjects from "nested-objects";
 import _get from "lodash.get";
 
 export default class MyMenu extends React.Component {
@@ -17,7 +18,18 @@ export default class MyMenu extends React.Component {
 		this.startSearching = this.startSearching.bind(this);
 	}
 
-
+	onNodeClick(tree, node, keyPath, event) {
+		event.preventDefault();
+		if (!this.state.search.isSearching || !this.state.search.searchInput.length) {
+			node.isOpen = !node.isOpen;
+			node.maxLeaves = this.props.maxLeaves;
+			NestedObjects.set(tree, keyPath, node);
+			if (this.props.onNodeMouseClick) {
+				const currLevel = Math.floor(keyPath.split(".").length / 2);
+				this.props.onNodeMouseClick(event, tree, node, currLevel, keyPath);
+			}
+		}
+	}
 	startSearching() {
 		this.setState({
 			search: {
@@ -110,6 +122,7 @@ export default class MyMenu extends React.Component {
 				prevs.push(
 					<li key={itemKey}
 						className="my-menu-leaf-container"
+						onClick={(e) => this.props.onLeafMouseClick ? this.props.onLeafMouseClick(e, curr) : null}
 						onMouseDown={(e) => this.props.onLeafMouseDown ? this.props.onLeafMouseDown(e, curr) : null}
 						onMouseUp={(e) => this.props.onLeafMouseUp ? this.props.onLeafMouseUp(e, curr) : null}
 					>
@@ -137,6 +150,7 @@ export default class MyMenu extends React.Component {
 				if (shouldDisplay || curr.isTopParent) {
 					prevs.push(
 						<div key={key}
+						onClick={this.onNodeClick.bind(this, tree, curr, keyPath)}
 							className="my-menu-node-container"
 						>
 							<label>{nodeName}</label>
@@ -151,6 +165,7 @@ export default class MyMenu extends React.Component {
 				if (shouldDisplay) {
 					openedNode.push(
 						<div key={key}
+						onClick={this.onNodeClick.bind(this, tree, curr, keyPath)}
 							className="my-menu-node-container"
 						>
 							<label>{nodeName}</label>
@@ -168,7 +183,8 @@ export default class MyMenu extends React.Component {
 
 					if (childrenList.length > 0) {
 						openedNode.push(
-							<ul key={"my-menu-children-list" + currLevel}>
+							<ul key={"my-menu-children-list" + currLevel}
+							>
 								{childrenList}
 							</ul>
 						);
@@ -253,6 +269,7 @@ MyMenu.propTypes = {
 	emptyTreeComponent: PropTypes.any,
 	emptyTreeComponentProps: PropTypes.object,
 	filter: PropTypes.func,
+	onNodeMouseClick: PropTypes.func,
 	maxLeaves: PropTypes.number
 };
 
@@ -264,5 +281,6 @@ MyMenu.defaultProps = {
 	emptyTreeComponent: null,
 	emptyTreeComponentProps: {},
 	filter: (node, searchInput) => node.name.toLowerCase().indexOf(searchInput.toLowerCase()) >= 0,
+	onNodeMouseClick: ()=>{},
 	maxLeaves: Infinity
 };
