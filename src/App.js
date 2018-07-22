@@ -80,7 +80,7 @@ class App extends Component {
         <div className="columns">
           <div className="col-md-9 centered">
             <form className="container">
-              <h3>Chaldal menu search</h3>
+              <h3>Menu search</h3>
               <MyMenu tree={this.state.tree}
                 onNodeMouseClick={this.onNodeMouseClick.bind(this)}
                 onLeafMouseClick={this.onLeafMouseClick}
