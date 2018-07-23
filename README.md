@@ -1,6 +1,6 @@
 # menu-search using ReactJS
 
-<!-- ![ChaldalDemo](https://github.com/gsayem/chaldhal-menu-search/blob/master/ChaldalDemo.gif) -->
+![Demo](https://github.com/gsayem/react-menu-search/blob/master/Demo.gif)
 
 Clone the code and run the follwing commands,
 

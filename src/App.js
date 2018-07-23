@@ -7,6 +7,7 @@ import sampleData from "./sampleData.json"
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 
+
 class App extends Component {
 
   populateChildData(parentNode) {
@@ -80,35 +81,22 @@ class App extends Component {
         <div className="columns">
           <div className="col-md-9 centered">
             <form className="container">
-              <h3>Menu search</h3>
+              <h3 className="h3-title">Menu using ReactJS</h3>
               <MyMenu tree={this.state.tree}
                 onNodeMouseClick={this.onNodeMouseClick.bind(this)}
                 onLeafMouseClick={this.onLeafMouseClick}
               />
+          
             </form>
+            <div className="copyright">{(new Date().getFullYear())} &#169; Sayem</div>
             <NotificationContainer />
           </div>
+          
+          
+          
+          
         </div>
-      </div>
-      // <div>
-      //   <button className='btn btn-info'
-      //     onClick={this.onLeafMouseClick()}>Info
-      //   </button>
-      //   <hr/>
-      //   <button className='btn btn-success'
-      //     onClick={this.createNotification('success')}>Success
-      //   </button>
-      //   <hr/>
-      //   <button className='btn btn-warning'
-      //     onClick={this.createNotification('warning')}>Warning
-      //   </button>
-      //   <hr/>
-      //   <button className='btn btn-danger'
-      //     onClick={this.createNotification('error')}>Error
-      //   </button>
-
-      //   <NotificationContainer/>
-      // </div>
+      </div>      
     );
   }
 
