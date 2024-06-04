@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import '../node_modules/spectre.css/dist/spectre.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import MyMenu from "./my-menu"
+import MyMenu from "./my-menu";
 import "./my-menu.css";
-import sampleData from "./sampleData.json"
+import sampleData from "./sampleData.json";
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 class App extends Component {
@@ -42,15 +46,6 @@ class App extends Component {
     return NotificationManager.info(leaf.name);
   }
 
-  // onLeafMouseUp(event, leaf) {
-  //   console.log(leaf.id); // Prints the leaf id
-  //   console.log(leaf.name); // Prints the leaf name
-  // }
-
-  // onLeafMouseDown(event, leaf) {
-  //   console.log(leaf.id); // Prints the leaf id
-  //   console.log(leaf.name); // Prints the leaf name
-  // }
   componentWillMount() {
     let allParent = sampleData.filter(p => p.ParentCategoryId === 0);
     let allData = [];
@@ -77,26 +72,22 @@ class App extends Component {
 
     // console.log(allData);
     return (
-      <div className="container">
-        <div className="columns">
-          <div className="col-md-9 centered">
+
+      <Container>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }}>
             <form className="container">
               <h3 className="h3-title">Menu using ReactJS</h3>
               <MyMenu tree={this.state.tree}
                 onNodeMouseClick={this.onNodeMouseClick.bind(this)}
                 onLeafMouseClick={this.onLeafMouseClick}
               />
-          
             </form>
             <div className="copyright">{(new Date().getFullYear())} &#169; Sayem</div>
             <NotificationContainer />
-          </div>
-          
-          
-          
-          
-        </div>
-      </div>      
+          </Col>
+        </Row>
+      </Container>
     );
   }
 
